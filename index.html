@@ -93,6 +93,9 @@
         // Calculate the percentage scrolled
         const progress = (distance / height) * 100;
 
+        // Update the width of the progress bar
+        bar.style.width = progress + '%';
+
         console.log(height, distance, progress);
       }
 
