@@ -87,7 +87,10 @@
           window.getComputedStyle(document.body).height
         );
 
-        console.log(height);
+        // Calculate how far the user has scrolled
+        const distance = window.pageYOffset;
+
+        console.log(height, distance);
       }
 
       // Listen for scroll events
