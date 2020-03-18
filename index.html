@@ -81,7 +81,14 @@
       // Get the scroll progress bar
       const bar = document.querySelector('#scroll-progress');
 
-      function scrollHandler() {}
+      function scrollHandler() {
+        // Calculate the body height
+        const height = parseFloat(
+          window.getComputedStyle(document.body).height
+        );
+
+        console.log(height);
+      }
 
       // Listen for scroll events
       window.addEventListener('scroll', scrollHandler);
