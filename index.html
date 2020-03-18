@@ -90,7 +90,10 @@
         // Calculate how far the user has scrolled
         const distance = window.pageYOffset;
 
-        console.log(height, distance);
+        // Calculate the percentage scrolled
+        const progress = (distance / height) * 100;
+
+        console.log(height, distance, progress);
       }
 
       // Listen for scroll events
