@@ -82,21 +82,26 @@
       const bar = document.querySelector('#scroll-progress');
 
       function scrollHandler() {
+        // Calculate the viewport height
+        const viewportHeight =
+          window.innerHeight || document.documentElement.clientHeight;
+
         // Calculate the body height
-        const height = parseFloat(
-          window.getComputedStyle(document.body).height
-        );
+        const bodyHeight =
+          parseInt(window.getComputedStyle(document.body).height) -
+          viewportHeight +
+          1;
 
         // Calculate how far the user has scrolled
         const distance = window.pageYOffset;
 
         // Calculate the percentage scrolled
-        const progress = (distance / height) * 100;
+        const progress = (distance / bodyHeight) * 100;
 
         // Update the width of the progress bar
         bar.style.width = progress + '%';
 
-        console.log(height, distance, progress);
+        console.log(viewportHeight, bodyHeight, distance, progress);
       }
 
       // Listen for scroll events
