@@ -101,6 +101,9 @@
         // Update the width of the progress bar
         bar.style.width = progress + '%';
 
+        // Update aria-valuenow for screen reader support
+        bar.setAttribute('aria-valuenow', Math.floor(progress));
+
         console.log(viewportHeight, bodyHeight, distance, progress);
       }
 
